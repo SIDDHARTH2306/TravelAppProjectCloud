@@ -1,0 +1,79 @@
+
+Flight details collection
+[
+	{
+		"flight_logo" : "image of flight",
+		"first_name" : "IndiGo(name of flight)",
+		"departure_plc" : "Place of departure",
+		"destination_plc" : "place of destination",
+		"departure_time" : "time",
+		"departure_date" : "date",
+		"destination_time" : "time",
+		"destination_date" : "date",
+		"pls_day" : "+1 if flight travel morethan onee day or +2 if flight travel more than 2 days",
+		"total_hour" : "hours of journey",
+		"no_stops" : "true if no stops in route",
+		"price" : ""
+	},
+	{
+		"flight_logo" : "image of flight",
+		"first_name" : "IndiGo(name of flight)",
+		"departure_plc" : "Place of departure",
+		"destination_plc" : "place of destination",
+		"departure_time" : "time",
+		"departure_date" : "date",
+		"destination_time" : "time",
+		"destination_date" : "date",
+		"pls_day" : "+1 if flight travel morethan onee day or +2 if flight travel more than 2 days",
+		"total_hour" : "hours of journey",
+		"no_stops" : "true if no stops in route",
+		"price" : ""
+	}........
+]
+
+
+Booking details collection
+[
+	{
+		"booking_no" : "no"
+		"email_id" : "email_id of account from which ticjet is booked",
+		"date_time" : "date time of booking",
+		"traveller_name" : [ 
+								{"fname":"first_name", "lname":"last_name"},
+								{"fname":"first_name", "lname":"last_name"},
+								{"fname":"first_name", "lname":"last_name"}
+							]
+		"amount" : "amount paid"
+	},
+	{
+		"booking_no" : "no"
+		"email_id" : "email_id of account from which ticjet is booked",
+		"date_time" : "date time of booking",
+		"traveller_name" : [ 
+								{"fname":"first_name", "lname":"last_name"},
+								{"fname":"first_name", "lname":"last_name"},
+								{"fname":"first_name", "lname":"last_name"}
+							]
+		"amount" : "amount paid"
+	}..............
+]
+
+
+Account credentials
+[
+	{
+		"email_id":"email_id of account",
+		"password":"password of acc",
+		"username":"username"
+	},
+	{
+		"email_id":"email_id of account",
+		"password":"password of acc",
+		"username":"username"
+	},
+	{
+		"email_id":"email_id of account",
+		"password":"password of acc",
+		"username":"username"
+	}..........................
+]

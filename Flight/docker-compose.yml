@@ -1,0 +1,7 @@
+web:
+    build: .
+    command: python -u flight.py
+    ports:
+        - "5001:5001"
+    volumes: 
+        - .:/Flight

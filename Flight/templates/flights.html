@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Select Flight</title>
+	<style type="text/css">
+body  {
+    background-image: url("/static/images/Background.jpg");
+    background-size: cover;
+}
+
+
+ul {
+  background: #3399ff;
+  padding: 20px;
+}
+
+ul li {
+  background: #cce5ff;
+  margin: 5px;
+}
+
+		.button {
+  background-color: #0563af;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.box {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.box select {
+  background-color: #0563af;
+  color: white;
+  padding: 12px;
+  width: 250px;
+  border: none;
+  font-size: 20px;
+  font-family: Times New Roman;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  -webkit-appearance: button;
+  appearance: button;
+  outline: none;
+}
+
+.box::before {
+  content: "\f13a";
+  font-family: FontAwesome;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20%;
+  height: 100%;
+  text-align: center;
+  font-size: 28px;
+  line-height: 45px;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
+.box:hover::before {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.box select option {
+  padding: 30px;
+}
+	</style>
+</head>
+<body>
+	<h1><p align="center">Select Location, Travel Date and Flight</p></h1>
+
+
+	
+	<form action="http://54.236.253.176:5001/show_flights" method="POST">
+
+	<h2><p>Your Destination is {{ city_name }}</p></h2>
+	<div class="box">
+	<h3>Select Your Location:</h3>
+		<!-- <th><h3>Select Your Destination:</h3></th> -->
+		
+		
+	
+
+			<select id="source" name="source">
+			  <option value="Toronto">Toronto</option>
+			  <option value="Vancouver">Vancouver</option>
+			  <option value="Halifax">Halifax</option>
+			  <option value="Montreal">Montreal</option>
+			  <option value="Edmonton">Edmonton</option>
+			  <option value="Calgary">Calgary</option>
+			  <option value="Burnaby">Burnaby</option>
+			  <option value="Cape Bretton">Cape Bretton</option>
+			  <option value="Fredericton">Fredericton</option>
+			  <option value="Saskatoon">Saskatoon</option>
+		</select>
+		<br>
+		<br>
+		<h3>Select Date:</h3>
+		<input type="date" id="flight_date" name="flight_date" min="2020-04-03">
+		
+	<button type="submit" class="button">Find Flights</button></td>
+</div>
+	</form>
+	</table>
+	<br><br><br><br><br><br><br>
+	
+	<!-- #Edit This and make it pretty -->
+	<h3>Flights:</h3><br>
+
+	{% if flight_list is defined %}
+	<div>
+	
+	<ul>
+		{% for dict in flight_list: %}
+		<li>
+				Flight Name: {{ dict.get('first_name')}} | Flight Code: {{dict.get('flightcode')}} | Departure Date: {{(dict.get('departure_date'))}} | Book <a href="http://35.173.126.167:5000/fc/{{ dict.get('flightcode') }}">{{ dict.get('flightcode') }}</a>
+		
+		</li>	
+		{% endfor %}
+	</ul>
+
+	</div>
+	{% endif %}
+
+</body>
+</html>

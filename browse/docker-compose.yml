@@ -1,0 +1,7 @@
+web:
+    build: .
+    command: python -u browse.py
+    ports:
+        - "5002:5002"
+    volumes: 
+        - .:/browse

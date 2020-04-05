@@ -1,0 +1,7 @@
+web:
+    build: .
+    command: python -u payment.py
+    ports:
+        - "5003:5003"
+    volumes: 
+        - .:/Payment

@@ -1,0 +1,7 @@
+web:
+    build: .
+    command: python -u login_register.py
+    ports:
+        - "5000:5000"
+    volumes: 
+        - .:/Login_Register

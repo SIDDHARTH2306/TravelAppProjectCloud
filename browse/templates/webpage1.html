@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+
+$(function() {
+    $('input[name="db"]').on('click', function() {
+        if ($(this).val() == 'One Way') {
+            $('#datee').hide();
+        }
+        else {
+            $('#datee').show();
+        }
+    });
+});
+
+
+</script>
+</head>
+
+
+<body>
+
+<form action="flights.html" >
+
+<h1> <b> Ticket Booking System </h1>
+  <h2><p>Welcome {{ uname }}!</p></h2>
+
+  <br><br><br>
+<label for="departure">Depart From:</label>
+
+<select id="departure">
+  <option value="Toronto">Toronto</option>
+  <option value="Vancouver">Vancouver</option>
+  <option value="Halifax">Halifax</option>
+  <option value="Montreal">Montreal</option>
+</select><br>
+<br>
+
+
+<label for="GoingTO">Going To:</label>
+<select id="GoingTO">
+  <option value="Toronto">Toronto</option>
+  <option value="Vancouver">Vancouver</option>
+  <option value="Halifax">Halifax</option>
+  <option value="Montreal">Montreal</option>
+</select><br><br>
+
+
+
+<input type="radio" id="one" value="One Way" name="db" >One Way</input>
+<input type="radio" id="round" value="Round-trip" name="db">Round-trip</input><br><br>
+
+
+
+<label for="departuredate" >Departuredate:</label>
+<input type="date" name="departuredate"><br><br>
+
+
+
+<label for="arrivaldate" >Returndate:</label>
+<input type="date" id="datee" name="arrivaldate"><br><br>
+
+
+
+
+<label for="adult">Adult:</label>
+<select id="adult">
+  <option value="0"></option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+</select>
+
+<label for="Children">Children:</label>
+<select id="Children">
+   <option value="0"></option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+</select><br><br>
+
+
+
+<input type="submit" id="submit" name="submit"/>
+
+
+</form>
+</body>

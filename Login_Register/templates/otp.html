@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>OPT</title>
+		<style type="text/css">
+			
+body  {
+    background-image: url("/static/images/Background.jpg");
+    background-size: cover;
+}
+	</style>
+</head>
+<body>
+	<CENTER>
+	<form action="http://35.173.126.167:5000/otp" method="POST">
+		<h3><label for="otp">An OTP has been sent to your email. <br>
+		Please enter it here:</label>
+		<input type="text" name="otp">
+		<button type="submit">Submit</button>
+		<p style="color: red">{{ error }}</p></h3>
+	</form>
+	</CENTER>
+</body>
+</html>

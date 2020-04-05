@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Destination Search</title>
+	<style type="text/css">
+		body  {
+    background-image: url("/static/images/Background.jpg");
+    background-size: cover;
+}
+
+ul {
+  background: #3399ff;
+  padding: 20px;
+}
+
+ul li {
+  background: #cce5ff;
+  margin: 5px;
+}
+
+.button {
+  background-color: #0563af;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.box {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.box select {
+  background-color: #0563af;
+  color: white;
+  padding: 12px;
+  width: 250px;
+  border: none;
+  font-size: 20px;
+  font-family: Times New Roman;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  -webkit-appearance: button;
+  appearance: button;
+  outline: none;
+}
+
+.box::before {
+  content: "\f13a";
+  font-family: FontAwesome;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20%;
+  height: 100%;
+  text-align: center;
+  font-size: 28px;
+  line-height: 45px;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
+.box:hover::before {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.box select option {
+  padding: 30px;
+}
+	</style>
+</head>
+<body>
+	<h1>
+	<p align="center">
+		Select Your Preferred Holiday Destination
+	</p>
+	</h1>
+	<h2><p align='center'>Find a Province to Explore</p></h2>
+
+	<form action="http://54.161.172.13:5002/browse" method="GET">
+		<div class="box">
+		<select id="province" name="province">
+			<option value="" selected>Choose Province</option>
+			<option value="Alberta">Alberta</option>
+			<option value="British Columbia">British Columbia</option>
+			<option value="Manitoba">Manitoba</option>
+			<option value="New Brunswick">New Brunswick</option>
+			<option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+			<option value="NovaScotia">Nova Scotia</option>
+			<option value="Ontario">Ontario</option>
+			<option value="Prince Edward Island">Prince Edward Island</option>
+			<option value="Quebec">Quebec</option>
+			<option value="Saskatchewan">Saskatchewan</option>
+		</select>
+	
+		<button type="submit" class="button">Submit</button>
+		</div>
+	</form>
+	<br><br><br><br>
+	{% if places_output is defined %}
+	<div>
+		
+		<ul>
+			{% for i in places_output: %}
+				<li><a href="http://54.236.253.176:5001/{{ places_output['city'] }}">{{ i }} - {{ places_output[i] }} - {{ places_output['city'] }}</a></li>
+			{% endfor %}
+		</ul>
+		
+	</div>
+	{% endif %}
+</body>
+</html>
